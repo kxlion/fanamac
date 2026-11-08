@@ -59,45 +59,45 @@ Mouse emulation's joystick and button are only known for the RS rim.
 
 ## Install
 
+FanaMac is built on your own Mac, once, with a few commands in Terminal.
+
 You need:
 
 - an Apple silicon Mac on macOS 14 or later
-- the Xcode Command Line Tools with a macOS 26 SDK
-- a CSL DD on USB, in PC mode (red LED)
-- CrossOver with your game installed in a bottle, to play
+- a CSL DD connected by USB
+- [CrossOver](https://www.codeweavers.com/crossover), the app that runs Windows games on a Mac, with your game installed in it
 
-Install the Command Line Tools if you don't have them yet:
+Install Apple's developer tools, if you don't have them yet:
 
 ```bash
 xcode-select --install
 ```
 
-Then get the code and build it. Build the plug-in first: without it, the app has no force feedback.
+Download and build FanaMac. It's finished when Terminal shows `Built build/FanaMac.app`:
 
 ```bash
-git clone https://github.com/kxlion/fanamac.git
-cd fanamac
-ffplugin/build.sh
-app/build.sh
+git clone https://github.com/kxlion/fanamac.git ~/fanamac && cd ~/fanamac && ffplugin/build.sh && app/build.sh
 ```
 
-The app is `app/build/FanaMac.app`. Nothing else is installed.
+This creates a `fanamac` folder in your home folder: leave it there. To open the app:
 
-## Force feedback in a game
+```bash
+open ~/fanamac/app/build/FanaMac.app
+```
 
-Follow this order every time. A CrossOver bottle gets force feedback, the brake and the handbrake only if it starts after FanaMac has found the base.
+## Play with force feedback
 
-| Step | Action |
-|---|---|
-| 1 | Quit your game, Steam and CrossOver completely |
-| 2 | Turn the base on in PC mode (red LED) |
-| 3 | Open FanaMac with `open app/build/FanaMac.app`. The toolbar must show **Connected** with a green dot |
-| 4 | Start CrossOver, then your game in its bottle |
-| 5 | In the game's settings, assign the wheel and pedals and turn force feedback on |
-| 6 | Set the game's force feedback low for the first run, then raise it |
-| 7 | Leave FanaMac open while you play. A **Game** badge shows in the toolbar while the game sends forces |
+Follow this order every time. If CrossOver starts before FanaMac, the game gets no force feedback, brake or handbrake.
 
-Controls assigned before you used FanaMac may no longer match, because it changes the axis numbers: assign them again. In Assetto Corsa Competizione, the default Fanatec controls work and only the clutch has to be added by hand.
+1. Quit your game, Steam and CrossOver completely.
+2. Turn the base on in PC mode (red LED).
+3. Open FanaMac. At the top right, it must show **Connected** with a green dot.
+4. Start CrossOver, then your game.
+5. In the game's settings, assign the wheel and pedals and turn force feedback on.
+6. Set the game's force feedback low for the first run, then raise it.
+7. Leave FanaMac open while you play. A **Game** badge appears next to **Connected** when the game sends forces.
+
+Controls you set up before using FanaMac may no longer match: set them up again. In Assetto Corsa Competizione, the default Fanatec controls work and only the clutch has to be added by hand.
 
 To change the base's settings, pick a setup in FanaMac, adjust it and click **Send**.
 
@@ -106,27 +106,19 @@ To change the base's settings, pick a setup in FanaMac, adjust it and click **Se
 | What you see | What to do |
 |---|---|
 | Orange dot, no force, or no brake and handbrake in the game | CrossOver was already running. Quit it completely, wait for the dot to turn green, then start it again |
-| The dot stays orange after quitting | A Wine process is still running, often `steamwebhelper`. Quit it in Activity Monitor |
+| The dot stays orange after quitting | Part of CrossOver is still running, often `steamwebhelper`. Quit it in Activity Monitor |
 | **Not connected** | Check the USB cable, and that the base is on in PC mode |
-| Green dot but no force | Check that `app/build.sh` didn't print "No force feedback plug-in". If it did, follow the update steps below |
+| Green dot but no force | Check that force feedback is on in the game and that the wheel is assigned there |
 
-### Update
+## Update
 
-Quit FanaMac, your game, Steam and CrossOver, then from the repository:
+To get the latest version, quit FanaMac, your game, Steam and CrossOver, then run this in Terminal:
 
 ```bash
-git pull
-ffplugin/build.sh
-app/build.sh
+cd ~/fanamac && git pull && ffplugin/build.sh && app/build.sh
 ```
 
-## Development
-
-| Command | Result |
-|---|---|
-| `app/build.sh test` | Runs the app's tests, no hardware needed |
-| `ffplugin/build.sh test` | Runs the force calculation tests |
-| `app/build.sh cli` | Builds the development tool, `app/build/fanamac` |
+It's finished when Terminal shows `Built build/FanaMac.app`. Your setups are kept. Mouse Emulation has to be allowed again after each update: see below.
 
 ## Mouse emulation
 
@@ -134,7 +126,7 @@ macOS asks for the Accessibility permission the first time. Allow FanaMac in Sys
 
 It stays active during games so you can use their menus. Turn it off before driving.
 
-Each build needs the permission again, because the app is ad-hoc signed. Clear the old entry, then allow it again:
+After each update, macOS no longer recognises FanaMac. Run this in Terminal, then allow FanaMac again as above:
 
 ```bash
 tccutil reset Accessibility app.fanamac.FanaMac
@@ -151,7 +143,15 @@ tccutil reset Accessibility app.fanamac.FanaMac
 
 Nothing is installed in the system or in the CrossOver bottle, and games are not modified.
 
-## Project layout
+## For developers
+
+| Command | Result |
+|---|---|
+| `app/build.sh test` | Runs the app's tests, no hardware needed |
+| `ffplugin/build.sh test` | Runs the force calculation tests |
+| `app/build.sh cli` | Builds the development tool, `app/build/fanamac` |
+
+Builds use the macOS 26 SDK from the Xcode Command Line Tools. `app/build.sh` refuses to run while FanaMac is open.
 
 | Path | Content |
 |---|---|
