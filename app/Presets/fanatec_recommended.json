@@ -1,0 +1,5558 @@
+{
+ "source": "Fanatec App 1.6.1.3",
+ "note": "Tuning values FanaMac can send are in 'tuning'. 'userPreference' keys are left as they are.",
+ "games": [
+  {
+   "game": "Assetto Corsa",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode recommended)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 50,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 50%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 70
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 75%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": [
+        "*SPR value has no effect."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 75%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": [
+        "*SPR value has no effect."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 70
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 75%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": [
+        "*SPR value has no effect."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 65%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": [
+        "*SPR value has no effect."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -01"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 65%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": [
+        "*SPR value has no effect."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 50,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 3,
+        "NIN": 5,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 50%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 50,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 3,
+        "NIN": 5,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 50%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 50,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 3,
+        "NIN": 5,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Invert: Unchecked",
+        "Gain: 50%",
+        "Filter: 0%",
+        "Min Force: 0%",
+        "Kerb Effects: 0%",
+        "Road Effects: 0%",
+        "Slip Effects: 0%",
+        "ABS Effects: 0%",
+        "Enhanced Understeer Effect: Unchecked",
+        "Half FFB Update Rate: Unchecked",
+        "Gamma: 1.00",
+        "Filter: 0.00",
+        "Speed Sensitivity: 0.00"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "Assetto Corsa Competizione",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode recommended)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 20,
+        "NFR": 0,
+        "NIN": 3,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 50,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 1080",
+        "Gain: 70",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 1080",
+        "Gain: 70",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base +",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 70
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 1080",
+        "Gain: 70",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 900",
+        "Gain: 70",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -01"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 900",
+        "Gain: 70",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 2,
+        "NIN": 3,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 1080",
+        "Gain: 60",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 2,
+        "NIN": 3,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 1080",
+        "Gain: 60",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 2,
+        "NIN": 3,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Steer lock: 1080",
+        "Gain: 60",
+        "Min Force: 0",
+        "Dynamic Damping: 100",
+        "Road Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "Automobilista",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base +",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 3,
+        "NIN": 5,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 3,
+        "NIN": 5,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 3,
+        "NIN": 5,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Controller Type: Wheel",
+        "Auto Steering Rotation: On",
+        "Force Feedback Effects: Pure 180Hz",
+        "Force Feedback Strength: -75%",
+        "FFB Low Force Boost: 0%",
+        "Steering Speed Sensitivity: 0%",
+        "Steering Rate: 100%",
+        "Throttle Rate: 100%",
+        "Brake Rate: 100%",
+        "Clutch Rate: 100%"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "Automobilista 2",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base +",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BLI"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 42,
+        "FFS": 1,
+        "NDP": 22,
+        "NFR": 1,
+        "NIN": 6,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 42,
+        "FFS": 1,
+        "NDP": 22,
+        "NFR": 1,
+        "NIN": 6,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 42,
+        "FFS": 1,
+        "NDP": 22,
+        "NFR": 1,
+        "NIN": 6,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Gain: 65",
+        "Low Force Boost: 0",
+        "FX: 0",
+        "Menu Spring Strength: 0"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "DiRT Rally",
+   "bases": {
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 70
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 75",
+        "Wheel Friction: 0",
+        "Tyre Friction: 42",
+        "Suspension: 75",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 75",
+        "Wheel Friction: 0",
+        "Tyre Friction: 42",
+        "Suspension: 75",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 70
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 75",
+        "Wheel Friction: 0",
+        "Tyre Friction: 42",
+        "Suspension: 75",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 0",
+        "Tyre Friction: 35",
+        "Suspension: 70",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 0",
+        "Tyre Friction: 35",
+        "Suspension: 70",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™ (V2.5 Compatibility Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 25,
+        "NFR": 5,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 0",
+        "Tyre Friction: 35",
+        "Suspension: 70",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™ (V2.5 Compatibility Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 25,
+        "NFR": 5,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 0",
+        "Tyre Friction: 35",
+        "Suspension: 70",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2 (V2.5 Compatibility Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 25,
+        "NFR": 5,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 0",
+        "Tyre Friction: 35",
+        "Suspension: 70",
+        "Tyre Slip: 0",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "DiRT Rally 2.0",
+   "bases": {
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 70
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 15",
+        "Tyre Friction: 30",
+        "Suspension: 70",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Centre Force Enabled: On",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 0",
+        "Tyre Friction: 20",
+        "Suspension: 70",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Centre Force Enabled: On",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 70
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 70",
+        "Wheel Friction: 15",
+        "Tyre Friction: 30",
+        "Suspension: 70",
+        "Collision: 50",
+        "Soft Lock: 50",
+        "Steering Centre Force Enabled: On",
+        "Steering Center Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 65",
+        "Wheel Friction: 0",
+        "Tyre Friction: 20",
+        "Suspension: 65",
+        "Collision: 45",
+        "Soft Lock: 45",
+        "Steering Centre Force Enabled: On",
+        "Steering Centre Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 65",
+        "Wheel Friction: 15",
+        "Tyre Friction: 30",
+        "Suspension: 65",
+        "Collision: 45",
+        "Soft Lock: 45",
+        "Steering Centre Force Enabled: On",
+        "Steering Centre Force: 50"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™ (V2.5 Compatibility Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 25,
+        "NFR": 3,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 65",
+        "Wheel Friction: 15",
+        "Tyre Friction: 30",
+        "Suspension: 65",
+        "Collision: 40",
+        "Soft Lock: 40",
+        "Steering Centre Force Enabled: On",
+        "Steering Center Force: 40"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™ (V2.5 Compatibility Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 25,
+        "NFR": 3,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 65",
+        "Wheel Friction: 15",
+        "Tyre Friction: 30",
+        "Suspension: 65",
+        "Collision: 40",
+        "Soft Lock: 40",
+        "Steering Centre Force Enabled: On",
+        "Steering Center Force: 40"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2 (V2.5 Compatibility Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 25,
+        "NFR": 3,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Feedback: On",
+        "Self Aligning Torque: 65",
+        "Wheel Friction: 15",
+        "Tyre Friction: 30",
+        "Suspension: 65",
+        "Collision: 40",
+        "Soft Lock: 40",
+        "Steering Centre Force Enabled: On",
+        "Steering Centre Force: 40"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly connected to the Wheel Friction in-game setting."
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "F1 2018",
+   "bases": {
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 0",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 0",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference",
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 0",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 15,
+        "NFR": 5,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 0",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 15,
+        "NFR": 5,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 0",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "NDP": 15,
+        "NFR": 5,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BRF"
+       ],
+       "otherSettings": [
+        "ABS User Preference"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 0",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "F1 2019",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode)",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 6,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "F1 2020",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode)",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 6,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "F1 2021",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode)",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 6,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 15",
+        "Off Track Effects: 20",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 360,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 70",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 5",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": [
+        "*SPR has no effect, DPR is directly associated with the Wheel Damper in-game setting."
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 360,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 10,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration & Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 10",
+        "Rumblestrip Effects: 25",
+        "Off Track Effects: 25",
+        "Wheel Damper: 10",
+        "Understeer Enhance: Off"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "F1 22",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 30,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base +",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base +",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI 005"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "GTDDPRO": {
+     "name": "Gran Turismo DD Pro",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 30,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 75",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2 / Podium Racing Wheel F1",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 60",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2 / Podium Racing Wheel F1",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 60",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2 / Podium Racing Wheel F1",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 60",
+        "On Track Effects: 10",
+        "Rumble Strip Effects: 25",
+        "Off Track Effects 25",
+        "Wheel Damper: 1",
+        "Understeer Enhance: Off",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "F1 23",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 30,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 30",
+        "Rumble Strip Effects: 40",
+        "Off Track Effects: 30",
+        "Wheel Damper: 2",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base +",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 30",
+        "Rumble Strip Effects: 40",
+        "Off Track Effects: 30",
+        "Wheel Damper: 2",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 30",
+        "Rumble Strip Effects: 40",
+        "Off Track Effects: 30",
+        "Wheel Damper: 2",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "GTDDPRO": {
+     "name": "Gran Turismo DD Pro",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 30,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 65",
+        "On Track Effects: 30",
+        "Rumble Strip Effects: 40",
+        "Off Track Effects: 30",
+        "Wheel Damper: 2",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2 / Podium Racing Wheel F1",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 45",
+        "On Track Effects: 30",
+        "Rumble Strip Effects: 40",
+        "Off Track Effects: 30",
+        "Wheel Damper: 2",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2 / Podium Racing Wheel F1",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 45",
+        "On Track Effects: 30",
+        "Rumble Strip Effects: 40",
+        "Off Track Effects: 30",
+        "Wheel Damper: 2",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2 / Podium Racing Wheel F1",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Vibration and Force Feedback: On",
+        "Vibration & Force Feedback Strength: 45",
+        "On Track Effects: 30",
+        "Rumble Strip Effects: 40",
+        "Off Track Effects: 30",
+        "Wheel Damper: 2",
+        "Maximum Rotation (F1 & F2): 360",
+        "Maximum Rotation (Supercars): 900"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "Project Cars 2",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Note: select ClubSport V2 base before running steering calibration",
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 003"
+       ],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 002"
+       ],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™ (V2.5 Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Note: select ClubSport V2 base before running steering calibration",
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™ (V2.5 Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Note: select ClubSport V2 base before running steering calibration",
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2 (V2.5 Mode)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 40,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "Force Feedback Menu",
+       "inGame": [
+        "Note: select ClubSport V2 base before running steering calibration",
+        "Flavour: Raw**",
+        "Gain: 100",
+        "Volume: 60",
+        "Tone: 50",
+        "FX: 50"
+       ],
+       "notes": [
+        "*SPR only affects the wheel centering in the menu. DPR values have no effect.",
+        "**Alternatively select 'Custom' in combination with Jack Spade's Custom Files (found on the official Project CARS Forum)"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "RaceRoom Experience",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 20,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 2,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 80 (higher values result in too much clipping in high downforce cars)",
+        "FFB Linearity: 100 (with Boost Kit) / 85 (with standard power supply)",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Bump Amplification: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Gearshift Effects: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 80 (higher values result in too much clipping in high downforce cars)",
+        "FFB Linearity: 85",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Bump Amplification: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Gearshift Effects: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 80
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 80 (higher values result in too much clipping in high downforce cars)",
+        "FFB Linearity: 85",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Bump Amplification: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Gearshift Effects: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 60
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 80 (higher values result in too much clipping in high downforce cars)",
+        "FFB Linearity: 85",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Bump Amplification: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Gearshift Effects: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 80 (higher values result in too much clipping in high downforce cars)",
+        "FFB Linearity: 100",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Bump Amplification: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Gearshift Effects: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 80 (higher values result in too much clipping in high downforce cars)",
+        "FFB Linearity: 100",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Bump Amplification: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)",
+        "Gearshift Effects: 0 (can be increased slightly for the sake of immersion, but it is exaggerated effect)"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 70",
+        "FFB Linearity: 100",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0",
+        "Bump Amplification: 0",
+        "Gearshift Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 70",
+        "FFB Linearity: 100",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0",
+        "Bump Amplification: 0",
+        "Gearshift Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 1,
+        "NDP": 25,
+        "NFR": 5,
+        "NIN": 0,
+        "INT": 4,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Advanced Settings:",
+        "Speed Sensitive Steering: 0",
+        "Steering Sensitivity: 50",
+        "Force Feedback:",
+        "Force Feedback: Checked",
+        "Inverted Force Feedback: Checked",
+        "FFB Strength: 70",
+        "FFB Linearity: 100",
+        "FFB Minimum Force: 0",
+        "FFB Maximum Force: 100",
+        "Stationary Friction: 50",
+        "Engine Vibrations: 0",
+        "Bump Amplification: 0",
+        "Gearshift Effects: 0"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "WRC Generations",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 20,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 1,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Max wheel angle: 360",
+        "Overall force: 90",
+        "Self aligning torque: 100",
+        "Tyre load: 5",
+        "Self centre: 50",
+        "Recentre force: 25",
+        "Ground surface: 10",
+        "Overall vibration: 50",
+        "All other vibration settings: 100"
+       ],
+       "notes": []
+      },
+      {
+       "label": "Belt-driven wheel bases",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI Off"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Max wheel angle: 360",
+        "Overall force: 90",
+        "Self aligning torque: 100",
+        "Tyre load: 5",
+        "Self centre: 50",
+        "Recentre force: 25",
+        "Ground surface: 10",
+        "Overall vibration: 50",
+        "All other vibration settings: 100"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "GTDDPRO": {
+     "name": "Gran Turismo DD Pro",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 20,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 1,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Max wheel angle: 360",
+        "Overall force: 90",
+        "Self aligning torque: 100",
+        "Tyre load: 5",
+        "Self centre: 50",
+        "Recentre force: 25",
+        "Ground surface: 10",
+        "Overall vibration: 50",
+        "All other vibration settings: 100"
+       ],
+       "notes": []
+      },
+      {
+       "label": "Belt-driven wheel bases",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI Off"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Max wheel angle: 360",
+        "Overall force: 90",
+        "Self aligning torque: 100",
+        "Tyre load: 5",
+        "Self centre: 50",
+        "Recentre force: 25",
+        "Ground surface: 10",
+        "Overall vibration: 50",
+        "All other vibration settings: 100"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 60,
+        "FFS": 1,
+        "NDP": 20,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 1,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Max wheel angle: 360",
+        "Overall force: 75",
+        "Self aligning torque: 100",
+        "Tyre load: 5",
+        "Self centre: 50",
+        "Recentre force: 25",
+        "Ground surface: 10",
+        "Overall vibration: 50",
+        "All other vibration settings: 100"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / DD2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 60,
+        "FFS": 1,
+        "NDP": 20,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 1,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Max wheel angle: 360",
+        "Overall force: 75",
+        "Self aligning torque: 100",
+        "Tyre load: 5",
+        "Self centre: 50",
+        "Recentre force: 25",
+        "Ground surface: 10",
+        "Overall vibration: 50",
+        "All other vibration settings: 100"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "iRacing",
+   "bases": {
+    "CSDD": {
+     "name": "ClubSport DD",
+     "variants": [
+      {
+       "label": "ClubSport DD / ClubSport DD+",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "FUL": 100,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Checked",
+        "Reduce force when parked: Checked",
+        "Strength: 7.5**",
+        "Wheel force: 12 Nm CS DD, 15 Nm CS DD+",
+        "Damping 0%",
+        "Min Force 0.0%",
+        "Go to \"Wheel Low Frequency Effects (LFE)\" section under wheel settings.",
+        "Enable Wheel LFE: ON",
+        "Use Phyiscs Effects: ON",
+        "Main Volume: 0 dB",
+        "Car Body Impact: 0 dB",
+        "Engine: 0 dB",
+        "Gear Change: 10 dB",
+        "Rev Limiter: 10 dB",
+        "Rumble Strip: 10 dB",
+        "Wheel Slip: 10 dB",
+        "Road Texture: -30 dB"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above.",
+        "FullForce Settings in iRacing:",
+        "Feel free to fine tune to your liking, 0 dB is a good baseline value, raise to boost something, lower to reduce something and -40 dB to turn an effect off."
+       ]
+      }
+     ]
+    },
+    "CSDDPLUS": {
+     "name": "ClubSport DD+",
+     "variants": [
+      {
+       "label": "ClubSport DD / ClubSport DD+",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "FUL": 100,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Checked",
+        "Reduce force when parked: Checked",
+        "Strength: 7.5**",
+        "Wheel force: 12 Nm CS DD, 15 Nm CS DD+",
+        "Damping 0%",
+        "Min Force 0.0%",
+        "Go to \"Wheel Low Frequency Effects (LFE)\" section under wheel settings.",
+        "Enable Wheel LFE: ON",
+        "Use Phyiscs Effects: ON",
+        "Main Volume: 0 dB",
+        "Car Body Impact: 0 dB",
+        "Engine: 0 dB",
+        "Gear Change: 10 dB",
+        "Rev Limiter: 10 dB",
+        "Rumble Strip: 10 dB",
+        "Wheel Slip: 10 dB",
+        "Road Texture: -30 dB"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above.",
+        "FullForce Settings in iRacing:",
+        "Feel free to fine tune to your liking, 0 dB is a good baseline value, raise to boost something, lower to reduce something and -40 dB to turn an effect off."
+       ]
+      }
+     ]
+    },
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD (Compatibility Mode recommended)",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "FFS": 1,
+        "NDP": 15,
+        "NFR": 0,
+        "NIN": 0,
+        "INT": 6,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Checked",
+        "Reduce force when parked: Checked",
+        "Strength: 8.5**",
+        "Wheel force: 5 Nm (standard power supply) or 8 Nm (Boost Kit 180)",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Unchecked",
+        "Reduce force when parked: Checked",
+        "Strength: 8.5**",
+        "Wheel force: 6Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Unchecked",
+        "Reduce force when parked: Checked",
+        "Strength: 8.5**",
+        "Wheel force: 6Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Unchecked",
+        "Reduce force when parked: Checked",
+        "Strength: 8.5**",
+        "Wheel force: 6Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Unchecked",
+        "Reduce force when parked: Checked",
+        "Strength: 8.5**",
+        "Wheel force: 7Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 900,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "FEI": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Unchecked",
+        "Reduce force when parked: Checked",
+        "Strength: 8.5**",
+        "Wheel force: 8Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 8.5 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 90,
+        "FFS": 0,
+        "NDP": 16,
+        "NFR": 2,
+        "NIN": 8,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Checked",
+        "Reduce force when parked: Checked",
+        "Strength: 6.0**",
+        "Wheel force: 20Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 6.0 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 90,
+        "FFS": 0,
+        "NDP": 16,
+        "NFR": 2,
+        "NIN": 8,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Checked",
+        "Reduce force when parked: Checked",
+        "Strength: 6.0**",
+        "Wheel force: 20Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 6.0 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 1080,
+        "FF": 90,
+        "FFS": 0,
+        "NDP": 16,
+        "NFR": 2,
+        "NIN": 8,
+        "INT": 3,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 100,
+        "SHO": 100
+       },
+       "userPreference": [
+        "BLI",
+        "BRF"
+       ],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Wheel Range and Map Range: Automatically determined by calibration wizard",
+        "Use Linear Mode: Checked",
+        "Reduce force when parked: Checked",
+        "Strength: 6.0**",
+        "Wheel force: 25Nm",
+        "Damping 0%",
+        "Min Force 0.0%"
+       ],
+       "notes": [
+        "*SPR and DPR values have no effect by default. They can be enabled through the app.ini, but this is not recommended.",
+        "**This is the slider above the 'Wheel Force' setting. If it is showing 'Max Force' values, you can click the text to switch to 'Strength' values. 6.0 is a suggested starting value, but it is highly dependent on the car selected. Therefore it is recommended to make your own adjustments to this value for every car by checking the box 'Use custom controls for this car', while paying attention to the clipping meter described above."
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "game": "rFactor 2",
+   "bases": {
+    "CSLDD": {
+     "name": "CSL DD",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro (Compatibility Mode recommended)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 0,
+        "NDP": 25,
+        "NFR": 3,
+        "NIN": 0,
+        "INT": 6,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLEPS4": {
+     "name": "CSL Elite PS4",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0,
+        "FEI": 60
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_0": {
+     "name": "CSL Elite V1",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base (V1)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0,
+        "FEI": 60
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI 003"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSLE_1_1": {
+     "name": "CSL Elite V1.1 / +",
+     "variants": [
+      {
+       "label": "CSL Elite Wheel Base V1.1 / CSL Elite Wheel Base + / CSL Elite Racing Wheel PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0,
+        "FEI": 60
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -03"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV2": {
+     "name": "ClubSport V2",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI 002"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "CSWV25": {
+     "name": "ClubSport V2.5",
+     "variants": [
+      {
+       "label": "ClubSport Wheel Base V2.5",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "SHO": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0,
+        "FEI": 60
+       },
+       "userPreference": [],
+       "otherSettings": [
+        "DRI -02"
+       ],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "GTDDPRO": {
+     "name": "Gran Turismo DD Pro",
+     "variants": [
+      {
+       "label": "CSL DD / Gran Turismo DD Pro (Compatibility Mode recommended)",
+       "tuning": {
+        "SEN": 0,
+        "FF": 100,
+        "FFS": 0,
+        "NDP": 25,
+        "NFR": 3,
+        "NIN": 0,
+        "INT": 6,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1": {
+     "name": "Podium DD1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 0,
+        "NDP": 16,
+        "NFR": 2,
+        "NIN": 8,
+        "INT": 5,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD1_PS4": {
+     "name": "Podium Racing Wheel F1",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD1 / Podium Racing Wheel F1® PS4™",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 0,
+        "NDP": 16,
+        "NFR": 2,
+        "NIN": 8,
+        "INT": 5,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    },
+    "PDD2": {
+     "name": "Podium DD2",
+     "variants": [
+      {
+       "label": "Podium Wheel Base DD2",
+       "tuning": {
+        "SEN": 0,
+        "FF": 45,
+        "FFS": 0,
+        "NDP": 16,
+        "NFR": 2,
+        "NIN": 8,
+        "INT": 5,
+        "FEI": 100,
+        "FOR": 100,
+        "SPR": 100,
+        "DPR": 0
+       },
+       "userPreference": [],
+       "otherSettings": [],
+       "inGameTitle": "",
+       "inGame": [
+        "Car Specific FFB Mult: Very important to find the right value per car. Between 50 and 75 works well for most cars.",
+        "FFB Smoothing: User Preference",
+        "FFB Minimum Torque: 0"
+       ],
+       "notes": []
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

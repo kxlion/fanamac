@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDevelopmentRegion</key><string>en</string>
+  <key>CFBundleExecutable</key><string>FanaMacFF</string>
+  <key>CFBundleIdentifier</key><string>app.fanamac.FanaMacFF</string>
+  <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+  <key>CFBundleName</key><string>FanaMacFF</string>
+  <key>CFBundlePackageType</key><string>BNDL</string>
+  <key>CFBundleShortVersionString</key><string>0.1</string>
+  <key>CFBundleVersion</key><string>1</string>
+  <key>CFPlugInDynamicRegistration</key><string>NO</string>
+  <key>CFPlugInFactories</key>
+  <dict>
+    <key>CD5B6809-31F4-4DED-AC1D-E15E359B5EAA</key><string>FanaMacFFFactory</string>
+    <key>23B1088A-E68E-47C3-A0CA-F73740D96BA4</key><string>FanaMacHIDFilterFactory</string>
+  </dict>
+  <key>CFPlugInTypes</key>
+  <dict>
+    <key>F4545CE5-BF5B-11D6-A4BB-0003933E3E3E</key>
+    <array><string>CD5B6809-31F4-4DED-AC1D-E15E359B5EAA</string></array>
+    <key>7DDEECA8-A7B4-11DA-8A0E-0014519758EF</key>
+    <array><string>23B1088A-E68E-47C3-A0CA-F73740D96BA4</string></array>
+  </dict>
+</dict>
+</plist>
