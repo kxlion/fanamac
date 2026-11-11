@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Builds FanaMac.app without Xcode: swiftc + a hand-made bundle.
-#   ./build.sh          build the app into build/FanaMac.app
+#   ./build.sh          build the app, plug-in included, into build/FanaMac.app
 #   ./build.sh test     run the hardware-free tests
 #   ./build.sh cli      build the command-line tool into build/fanamac
 set -euo pipefail
@@ -50,13 +50,10 @@ cp .build/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 # Your own images: drop wheelbase.png (and others) into Images/.
 find Images -maxdepth 1 -name '*.png' -exec cp {} "$APP/Contents/Resources/" \; 2>/dev/null || true
 
-# The base's force feedback plug-in for macOS (build it first: ../ffplugin/build.sh).
-if [[ -d ../ffplugin/build/FanaMacFF.plugin ]]; then
-  mkdir -p "$APP/Contents/PlugIns"
-  cp -R ../ffplugin/build/FanaMacFF.plugin "$APP/Contents/PlugIns/"
-else
-  echo "No force feedback plug-in in this build: run ../ffplugin/build.sh first."
-fi
+# The base's force feedback plug-in for macOS, in C: built here too, so one command makes the whole app.
+../ffplugin/build.sh
+mkdir -p "$APP/Contents/PlugIns"
+cp -R ../ffplugin/build/FanaMacFF.plugin "$APP/Contents/PlugIns/"
 
 # Fanatec's recommended settings per game (see docs/PRESETS.md).
 cp Presets/*.json "$APP/Contents/Resources/"

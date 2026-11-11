@@ -59,31 +59,24 @@ Mouse emulation's joystick and button are only known for the RS rim.
 
 ## Install
 
-FanaMac is built on your own Mac, once, with a few commands in Terminal.
-
 You need:
 
 - an Apple silicon Mac on macOS 14 or later
 - a CSL DD connected by USB
 - [CrossOver](https://www.codeweavers.com/crossover), the app that runs Windows games on a Mac, with your game installed in it
 
-Install Apple's developer tools, if you don't have them yet:
+1. Download `FanaMac-x.y.dmg` from the [latest release](https://github.com/kxlion/fanamac/releases/latest).
+2. Open it and drag FanaMac onto the Applications folder.
+3. Open FanaMac from Applications. macOS refuses the first time, because FanaMac isn't signed with a paid Apple developer certificate: click **Done**.
+4. Go to System Settings > Privacy & Security, scroll down to the message about FanaMac and click **Open Anyway**. This is only needed once per version.
+
+If you'd rather skip steps 3 and 4, run this in Terminal after step 2:
 
 ```bash
-xcode-select --install
+xattr -dr com.apple.quarantine /Applications/FanaMac.app
 ```
 
-Download and build FanaMac. It's finished when Terminal shows `Built build/FanaMac.app`:
-
-```bash
-git clone https://github.com/kxlion/fanamac.git ~/fanamac && cd ~/fanamac && ffplugin/build.sh && app/build.sh
-```
-
-This creates a `fanamac` folder in your home folder: leave it there. To open the app:
-
-```bash
-open ~/fanamac/app/build/FanaMac.app
-```
+Run FanaMac from Applications, not from the downloaded disk image. To build it yourself instead, see [For developers](#for-developers).
 
 ## Play with force feedback
 
@@ -96,6 +89,8 @@ Follow this order every time. If CrossOver starts before FanaMac, the game gets 
 5. In the game's settings, assign the wheel and pedals and turn force feedback on.
 6. Set the game's force feedback low for the first run, then raise it.
 7. Leave FanaMac open while you play. A **Game** badge appears next to **Connected** when the game sends forces.
+
+If you'd rather not think about the order, add FanaMac under System Settings > General > Login Items: it then opens with your session, before CrossOver.
 
 Controls you set up before using FanaMac may no longer match: set them up again. In Assetto Corsa Competizione, the default Fanatec controls work and only the clutch has to be added by hand.
 
@@ -112,13 +107,9 @@ To change the base's settings, pick a setup in FanaMac, adjust it and click **Se
 
 ## Update
 
-To get the latest version, quit FanaMac, your game, Steam and CrossOver, then run this in Terminal:
+Quit FanaMac, your game, Steam and CrossOver. Download the new `.dmg` from the [latest release](https://github.com/kxlion/fanamac/releases/latest), drag FanaMac onto Applications and choose **Replace**. Then open it as in steps 3 and 4 of [Install](#install).
 
-```bash
-cd ~/fanamac && git pull && ffplugin/build.sh && app/build.sh
-```
-
-It's finished when Terminal shows `Built build/FanaMac.app`. Your setups are kept. Mouse Emulation has to be allowed again after each update: see below.
+Your setups are kept. Mouse Emulation has to be allowed again after each update: see below.
 
 ## Mouse emulation
 
@@ -150,6 +141,17 @@ Nothing is installed in the system or in the CrossOver bottle, and games are not
 | `app/build.sh test` | Runs the app's tests, no hardware needed |
 | `ffplugin/build.sh test` | Runs the force calculation tests |
 | `app/build.sh cli` | Builds the development tool, `app/build/fanamac` |
+
+To build from source, install Apple's developer tools with `xcode-select --install`, then:
+
+```bash
+git clone https://github.com/kxlion/fanamac.git && cd fanamac && app/build.sh
+```
+
+| Command | Result |
+|---|---|
+| `app/build.sh` | Builds `app/build/FanaMac.app`, force feedback plug-in included |
+| `./release.sh` | Builds the app, then the release disk image `build/FanaMac-<version>.dmg` |
 
 Builds use the macOS 26 SDK from the Xcode Command Line Tools. `app/build.sh` refuses to run while FanaMac is open.
 

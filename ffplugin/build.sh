@@ -1,7 +1,7 @@
 #!/bin/zsh
 # Builds build/FanaMacFF.plugin, the CSL DD's force feedback plug-in for macOS.
 # Both architectures: native games run arm64, CrossOver's Wine runs x86_64.
-# app/build.sh copies it into FanaMac.app/Contents/PlugIns.
+# app/build.sh runs this and copies the result into FanaMac.app/Contents/PlugIns.
 set -euo pipefail
 cd "$(dirname "$0")"
 SDK="${FANAMAC_SDK:-$(ls -d /Library/Developer/CommandLineTools/SDKs/MacOSX26*.sdk 2>/dev/null | head -1)}"
