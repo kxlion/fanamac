@@ -60,6 +60,8 @@ struct ContentView: View {
         .formStyle(.grouped)
         .frame(minWidth: 560, minHeight: 640)
         .safeAreaInset(edge: .bottom) { bottomBar }
+        // The version next to the name, to tell an installed copy from a fresh build.
+        .navigationTitle("FanaMac \(FanaMacVersion.current)")
         .toolbar {
             ToolbarItem { gamesMenu }.withoutGlass()
             ToolbarItem { profilesMenu }.withoutGlass()
