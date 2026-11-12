@@ -13,13 +13,8 @@ struct FanaMacApp: App {
         .commands {
             // For a base FanaMac doesn't support yet: its owner sends this file.
             CommandGroup(replacing: .help) {
-                Button("Save Diagnostic…") {
-                    let panel = NSSavePanel()
-                    panel.allowedContentTypes = [.json]
-                    panel.nameFieldStringValue = "fanamac-diagnostic.json"
-                    if panel.runModal() == .OK, let url = panel.url { model.saveDiagnostic(to: url) }
-                }
-                .disabled(model.capturing)
+                Button("Save Diagnostic…") { model.askDiagnosticFile() }
+                    .disabled(model.capturing)
             }
         }
     }

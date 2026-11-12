@@ -93,6 +93,15 @@ public enum FanatecDevice: Equatable, Sendable {
     case unknown
 }
 
+/// Why FanaMac has no base to talk to.
+public enum BaseAbsence: Equatable, Sendable {
+    /// No Fanatec base is plugged in, or it is off.
+    case nothing
+    case consoleMode(String)
+    /// A Fanatec product, by product ID, that has no profile.
+    case unknownProduct(Int)
+}
+
 public struct BaseCatalog: Sendable {
     public private(set) var profiles: [BaseProfile]
 
@@ -169,6 +178,20 @@ public struct BaseCatalog: Sendable {
         if let a = Self.accessories[productID] { return .accessory(a) }
         if let c = Self.consoleModes[productID] { return .consoleMode(c) }
         return .unknown
+    }
+
+    /// Why no base is usable, from the Fanatec products plugged in. A base in
+    /// PlayStation mode explains it better than a product without a profile.
+    public func absence(productIDs: [Int]) -> BaseAbsence {
+        var unknown: Int?
+        for id in productIDs {
+            switch classify(productID: id) {
+            case let .consoleMode(name): return .consoleMode(name)
+            case .unknown: unknown = unknown ?? id
+            case .base, .accessory: continue
+            }
+        }
+        return unknown.map(BaseAbsence.unknownProduct) ?? .nothing
     }
 
     /// Folder where a profile file can be dropped to try a base without a new build.

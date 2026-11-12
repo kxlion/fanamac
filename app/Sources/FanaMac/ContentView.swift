@@ -9,55 +9,59 @@ struct ContentView: View {
         Form {
             Section { StatusHeader() }
 
-            if model.base != nil { DevicesSection(live: model.live, range: model.steeringRange) }
+            if model.showsTuning {
+                if model.base != nil { DevicesSection(live: model.live, range: model.steeringRange) }
 
-            Section {
-                HStack {
-                    Text("Tuning Menu")
-                    Spacer()
-                    HStack(spacing: 6) {
-                        ForEach([true, false], id: \.self) { standard in
-                            ChoiceChip(text: standard ? "Standard" : "Advanced",
-                                       selected: model.snapshotKnown && model.standardMenu == standard,
-                                       width: nil) {
-                                if model.standardMenu != standard { model.askingMenuSwitch = true }
+                Section {
+                    HStack {
+                        Text("Tuning Menu")
+                        Spacer()
+                        HStack(spacing: 6) {
+                            ForEach([true, false], id: \.self) { standard in
+                                ChoiceChip(text: standard ? "Standard" : "Advanced",
+                                           selected: model.snapshotKnown && model.standardMenu == standard,
+                                           width: nil) {
+                                    if model.standardMenu != standard { model.askingMenuSwitch = true }
+                                }
                             }
                         }
+                        .disabled(model.base == nil || model.sending || !model.snapshotKnown)
                     }
-                    .disabled(model.base == nil || model.sending || !model.snapshotKnown)
+                    HStack(spacing: 12) {
+                        Text("Setup")
+                        SetupSelector()
+                        Spacer()
+                        if model.snapshotKnown, !model.showsAutoSetup, model.wheelSlot != model.slot {
+                            Button("Activate") { Task { await model.activate() } }
+                                .disabled(!model.canActivate)
+                                .help("Switch the wheel to setup \(model.slot)")
+                        }
+                        Button { Task { await model.read() } } label: {
+                            Image(systemName: "arrow.clockwise")
+                        }
+                        .keyboardShortcut("r", modifiers: .command)
+                        .disabled(model.sending || model.base == nil)
+                        .help("Read the setup active on the wheel (⌘R)")
+                        .accessibilityLabel("Read")
+                    }
                 }
-                HStack(spacing: 12) {
-                    Text("Setup")
-                    SetupSelector()
-                    Spacer()
-                    if model.snapshotKnown, !model.showsAutoSetup, model.wheelSlot != model.slot {
-                        Button("Activate") { Task { await model.activate() } }
-                            .disabled(!model.canActivate)
-                            .help("Switch the wheel to setup \(model.slot)")
-                    }
-                    Button { Task { await model.read() } } label: {
-                        Image(systemName: "arrow.clockwise")
-                    }
-                    .keyboardShortcut("r", modifiers: .command)
-                    .disabled(model.sending || model.base == nil)
-                    .help("Read the setup active on the wheel (⌘R)")
-                    .accessibilityLabel("Read")
-                }
-            }
 
-            Section("Standard") {
-                ForEach(allParams.filter { $0.standard && model.has($0.key) }, id: \.key.rawValue) { ParamRow(param: $0) }
-            }
-            .disabled(model.showsAutoSetup)
-
-            if !model.standardMenu {
-                Section("Advanced") {
-                    ForEach(allParams.filter { !$0.standard && model.has($0.key) }, id: \.key.rawValue) { ParamRow(param: $0) }
+                Section("Standard") {
+                    ForEach(allParams.filter { $0.standard && model.has($0.key) }, id: \.key.rawValue) { ParamRow(param: $0) }
                 }
                 .disabled(model.showsAutoSetup)
+
+                if !model.standardMenu {
+                    Section("Advanced") {
+                        ForEach(allParams.filter { !$0.standard && model.has($0.key) }, id: \.key.rawValue) { ParamRow(param: $0) }
+                    }
+                    .disabled(model.showsAutoSetup)
+                }
             }
         }
         .formStyle(.grouped)
+        // Nothing to set up without a base: say why there is none, in the middle of the window.
+        .overlay { if !model.showsTuning { NoBaseView(absence: model.absence) } }
         .frame(minWidth: 560, minHeight: 640)
         .safeAreaInset(edge: .bottom) { bottomBar }
         // The version next to the name, to tell an installed copy from a fresh build.
@@ -97,19 +101,21 @@ struct ContentView: View {
                         .foregroundStyle(model.messageIsNote ? Color.secondary : .orange)
                 }
                 Spacer()
-                Button("Revert") { model.revertToWheelbase() }
-                    .keyboardShortcut(.cancelAction)
-                    .disabled(!model.canRevert)
-                    .help("Undo the changes not sent yet (Esc)")
-                Button {
-                    Task { await model.send() }
-                } label: {
-                    if model.sending { ProgressView().controlSize(.small) } else { Text("Send") }
+                if model.showsTuning {
+                    Button("Revert") { model.revertToWheelbase() }
+                        .keyboardShortcut(.cancelAction)
+                        .disabled(!model.canRevert)
+                        .help("Undo the changes not sent yet (Esc)")
+                    Button {
+                        Task { await model.send() }
+                    } label: {
+                        if model.sending { ProgressView().controlSize(.small) } else { Text("Send") }
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .keyboardShortcut(.return, modifiers: .command)
+                    .disabled(!model.canSend)
+                    .help("Write setup \(model.slot) to the wheelbase (⌘↩)")
                 }
-                .buttonStyle(.borderedProminent)
-                .keyboardShortcut(.return, modifiers: .command)
-                .disabled(!model.canSend)
-                .help("Write setup \(model.slot) to the wheelbase (⌘↩)")
             }
             .padding(.horizontal, 20).padding(.vertical, 12)
         }
@@ -123,7 +129,7 @@ struct ContentView: View {
             }
         } label: { Label("Games", systemImage: "flag.checkered") }
         .menuStyle(.borderlessButton)
-        .disabled(model.gamePresets.isEmpty || model.sending)
+        .disabled(model.gamePresets.isEmpty || model.sending || !model.showsTuning)
         .help("Fanatec's recommended settings for a game")
     }
 
@@ -133,6 +139,7 @@ struct ContentView: View {
             Button("Import Setup") { importSetup() }
         } label: { Label("Profiles", systemImage: "square.stack") }
         .menuStyle(.borderlessButton)
+        .disabled(!model.showsTuning)
     }
 
     private func importSetup() {
@@ -298,10 +305,7 @@ struct StatusHeader: View {
             }
             VStack(alignment: .leading, spacing: 2) {
                 Text(model.profile.map { "Fanatec \($0.name)" } ?? "Fanatec wheelbase").font(.headline)
-                if model.base == nil {
-                    Text("Turn the base on in PC mode (red LED). Not detected? Help > Save Diagnostic.")
-                        .font(.caption).foregroundStyle(.secondary)
-                } else if let p = model.profile, !p.isTested {
+                if let p = model.profile, !p.isTested {
                     Text(model.experimental
                          ? "Untested base, experimental mode: force capped at \(Int(BaseProfile.untestedForceCap * 100)) %"
                          : "Untested base: read-only")
@@ -328,6 +332,47 @@ struct StatusHeader: View {
             .help(model.wineTooEarly ? "CrossOver was already running: restart it for force feedback, brake and handbrake." : "")
         }
         .padding(.vertical, 4)
+    }
+}
+
+/// Shown in place of the settings while no base is connected.
+struct NoBaseView: View {
+    @EnvironmentObject var model: TuningModel
+    let absence: BaseAbsence
+
+    private var title: String {
+        switch absence {
+        case .nothing: "No wheelbase connected"
+        case let .consoleMode(name): "\(name) in PlayStation mode"
+        case .unknownProduct: "Fanatec product not recognised"
+        }
+    }
+
+    private var text: String {
+        switch absence {
+        case .nothing:
+            "Plug the base into this Mac and turn it on in PC mode (red LED). If it is on and still not detected, save a diagnostic."
+        case .consoleMode:
+            "FanaMac only talks to a base in PC mode. Switch the base to PC mode (red LED)."
+        case let .unknownProduct(id):
+            "FanaMac has no profile for product \(String(format: "%04X", id)) yet. Save a diagnostic and send it, so this product can be supported."
+        }
+    }
+
+    var body: some View {
+        VStack(spacing: 10) {
+            Image(systemName: "steeringwheel.slash")
+                .font(.system(size: 44)).foregroundStyle(.secondary)
+            Text(title).font(.title3.weight(.semibold))
+            Text(text)
+                .font(.callout).foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 360)
+            Button("Save Diagnostic…") { model.askDiagnosticFile() }
+                .disabled(model.capturing)
+                .padding(.top, 6)
+        }
+        .padding(40)
     }
 }
 

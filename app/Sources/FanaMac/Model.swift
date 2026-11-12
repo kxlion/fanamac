@@ -118,6 +118,14 @@ final class TuningModel: ObservableObject {
     @Published private(set) var capturing = false
     static let captureSeconds = 10.0
 
+    /// Asks where to save a diagnostic, then records it.
+    func askDiagnosticFile() {
+        let panel = NSSavePanel()
+        panel.allowedContentTypes = [.json]
+        panel.nameFieldStringValue = "fanamac-diagnostic.json"
+        if panel.runModal() == .OK, let url = panel.url { saveDiagnostic(to: url) }
+    }
+
     /// Records every Fanatec device for a few seconds into a file to send.
     func saveDiagnostic(to url: URL) {
         guard !capturing else { return }
@@ -139,6 +147,13 @@ final class TuningModel: ObservableObject {
         }
     }
     private let usbShifter = USBShifter()
+    private let watcher = FanatecWatcher()
+    /// Why there is no base, for the screen shown without one.
+    @Published private(set) var absence = BaseAbsence.nothing
+    /// The settings are on screen. They stay a moment after the base goes, so
+    /// the window doesn't jump when the base restarts or changes mode.
+    @Published private(set) var showsTuning = false
+    private static let hideDelay: UInt64 = 2_000_000_000
     private lazy var force = ForceOutput(wheelbase: wheelbase)
     /// The base is producing a force right now.
     @Published private(set) var forceActive = false
@@ -160,6 +175,14 @@ final class TuningModel: ObservableObject {
             guard let self else { return }
             let wasConnected = self.base != nil
             self.base = info
+            if info != nil {
+                self.showsTuning = true
+            } else if self.showsTuning {
+                Task { @MainActor [weak self] in
+                    try? await Task.sleep(nanoseconds: Self.hideDelay)
+                    if let self, self.base == nil { self.showsTuning = false }
+                }
+            }
             if info == nil {
                 self.live.forget(); self.baseSetups = [:]; self.snapshot = nil; self.wheelSlot = nil
                 self.force.baseGone()
@@ -182,6 +205,9 @@ final class TuningModel: ObservableObject {
             MainActor.assumeIsolated {
                 if let snap = TuningSnapshot(report: bytes) { self?.received(snap) } else { live.feed(bytes) }
             }
+        }
+        watcher.onChange = { [weak self] ids in
+            MainActor.assumeIsolated { self?.absence = Bases.catalog.absence(productIDs: ids) }
         }
         usbShifter.onPresence = { present in
             MainActor.assumeIsolated { live.setUSBShifter(present) }

@@ -346,6 +346,11 @@ let newBase = try JSONDecoder().decode(BaseProfile.self, from: Data(#"{"productI
 check(newBase.productID == 0x01E9 && newBase.has(.FF) && !newBase.has(.NDP), "profile file read")
 var psMode = newBase; psMode.productID = 0x0E07
 check(BaseCatalog(extra: [psMode]).classify(productID: 0x0E07) == .consoleMode("GT DD Pro"), "a profile file can't turn a PlayStation mode into a base")
+// Why no base is usable, from what is plugged in.
+check(catalog.absence(productIDs: []) == .nothing && catalog.absence(productIDs: [0x1A92, 0x183B]) == .nothing, "pedals and shifter alone: no base")
+check(catalog.absence(productIDs: [0x0E07]) == .consoleMode("GT DD Pro"), "a base in PlayStation mode is named")
+check(catalog.absence(productIDs: [0x7777, 0x1A92]) == .unknownProduct(0x7777), "a product without a profile is reported")
+check(catalog.absence(productIDs: [0x7777, 0x0E05]) == .consoleMode("Podium DD"), "PlayStation mode explains it before an unknown product")
 check(try JSONDecoder().decode(BaseProfile.self, from: JSONEncoder().encode(newBase)) == newBase, "profile round-trip")
 check(throwsError { _ = try JSONDecoder().decode(BaseProfile.self, from: Data(#"{"productID": "0020", "name": "x", "highResForce": true, "tuningMenu": true, "maxAngle": 9000}"#.utf8)) }, "absurd angle refused")
 var fakeCSL = newBase; fakeCSL.productID = 0x0020; fakeCSL.name = "Fake"
