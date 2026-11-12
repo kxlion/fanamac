@@ -1,4 +1,5 @@
-// USB access to the CSL DD through IOKit HID. No driver, no kernel extension.
+// USB access to the wheelbase through IOKit HID. No driver, no kernel extension.
+// Only the products that have a profile (Bases.swift) are opened.
 
 import Foundation
 @preconcurrency import IOKit.hid
@@ -15,7 +16,7 @@ enum WheelbaseError: LocalizedError {
     case writeFailed(IOReturn)
     var errorDescription: String? {
         switch self {
-        case .notConnected: return "No CSL DD found. Is the base on, in PC mode (red LED)?"
+        case .notConnected: return "No wheelbase found. Is the base on, in PC mode (red LED)?"
         case let .openFailed(r): return "Could not open the wheelbase (IOKit 0x\(String(UInt32(bitPattern: r), radix: 16)))."
         case let .writeFailed(r): return "The wheelbase refused the write (IOKit 0x\(String(UInt32(bitPattern: r), radix: 16)))."
         }
@@ -25,7 +26,7 @@ enum WheelbaseError: LocalizedError {
 /// Watches for the base being plugged/unplugged and writes tuning frames.
 final class Wheelbase: @unchecked Sendable {
     private let manager: IOHIDManager
-    private let marksBase: Bool
+    private let marks: @Sendable (Int) -> Bool
     private let lock = NSLock()
     private var devices: [IOHIDDevice] = []
     private let writeQueue = DispatchQueue(label: "fanamac.hid.write")
@@ -33,12 +34,13 @@ final class Wheelbase: @unchecked Sendable {
     /// Raw input reports (pedals, buttons, rim), delivered on the main thread.
     var onInput: (([UInt8]) -> Void)?
 
-    /// The command-line tool opens the base without marking it (`marksBase: false`).
-    init(marksBase: Bool = true) {
-        self.marksBase = marksBase
+    /// `marks` says, per product ID, whether FanaMac's force feedback plug-in goes
+    /// on the base. The command-line tool never marks it.
+    init(productIDs: [Int] = BaseCatalog.builtIn.map(\.productID), marks: @escaping @Sendable (Int) -> Bool = { _ in false }) {
+        self.marks = marks
         manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
-        let match: [String: Any] = [kIOHIDVendorIDKey: FanatecIDs.vendorID, kIOHIDProductIDKey: FanatecIDs.cslDD]
-        IOHIDManagerSetDeviceMatching(manager, match as CFDictionary)
+        let match: [[String: Any]] = productIDs.map { [kIOHIDVendorIDKey: FanatecIDs.vendorID, kIOHIDProductIDKey: $0] }
+        IOHIDManagerSetDeviceMatchingMultiple(manager, match as CFArray)
         let ctx = Unmanaged.passUnretained(self).toOpaque()
         IOHIDManagerRegisterDeviceMatchingCallback(manager, { ctx, _, _, device in
             Unmanaged<Wheelbase>.fromOpaque(ctx!).takeUnretainedValue().added(device)
@@ -60,8 +62,18 @@ final class Wheelbase: @unchecked Sendable {
 
     private func added(_ d: IOHIDDevice) {
         lock.lock(); if !devices.contains(where: { $0 === d }) { devices.append(d) }; lock.unlock()
-        if marksBase { NativeForce.mark(d) }
+        applyMark(d)
         notify()
+    }
+
+    private func applyMark(_ d: IOHIDDevice) {
+        if marks(prop(d, kIOHIDProductIDKey) as? Int ?? 0) { NativeForce.mark(d) } else { NativeForce.unmark(d) }
+    }
+
+    /// `marks` gives another answer now (experimental mode turned on or off).
+    func refreshMarks() {
+        lock.lock(); let all = devices; lock.unlock()
+        all.forEach(applyMark)
     }
 
     /// Takes FanaMac's force feedback plug-in off the base (when FanaMac quits).
@@ -92,6 +104,9 @@ final class Wheelbase: @unchecked Sendable {
             (prop(d, kIOHIDPrimaryUsagePageKey) as? Int) == 0x01 && [0x04, 0x05].contains(prop(d, kIOHIDPrimaryUsageKey) as? Int ?? -1)
         } ?? devices.first
     }
+
+    /// Product ID of the connected base.
+    var productID: Int? { target().map { prop($0, kIOHIDProductIDKey) as? Int ?? 0 } }
 
     private func prop(_ d: IOHIDDevice, _ key: String) -> Any? { IOHIDDeviceGetProperty(d, key as CFString) }
 

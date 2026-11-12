@@ -17,7 +17,10 @@ fi
 P=build/FanaMacFF.plugin
 rm -rf build
 mkdir -p "$P/Contents/MacOS"
-cp Info.plist "$P/Contents/"
+# The version is the one line of ../VERSION (checked by app/build.sh too).
+VERSION="$(<../VERSION)"
+[[ "$VERSION" =~ '^[0-9]+(\.[0-9]+){1,2}$' ]] || { echo "VERSION must look like 1.2 or 1.2.3, not '$VERSION'." >&2; exit 1; }
+sed "s/@VERSION@/$VERSION/g" Info.plist > "$P/Contents/Info.plist"
 cc -isysroot "$SDK" -O2 -Wall -Wextra -bundle -arch arm64 -arch x86_64 -mmacosx-version-min=14.0 \
   src/plugin.c src/ffcalc.c src/hidfilter.c \
   -framework CoreFoundation -framework IOKit -o "$P/Contents/MacOS/FanaMacFF"

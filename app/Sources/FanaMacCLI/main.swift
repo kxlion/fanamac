@@ -6,6 +6,8 @@
 //   fanamac force [--level 5] [--seconds 1] [--send]
 //   fanamac effect spring|damper [--level 20] [--max 20] [--seconds 5] [--send]
 //   fanamac record <file>
+//   fanamac diagnose [file] [--seconds 10] [--ask-tuning]
+//   fanamac ingest <file> [--add]
 //
 // Without --send, force and effect only print the frames.
 
@@ -19,6 +21,14 @@ let usage = """
       fanamac effect spring|damper [--level 20] [--max 20] [--seconds 5] [--send]
                                            spring or damper played by the base
       fanamac record <file>                analyses a recording (FANAMAC_RECORD)
+      fanamac diagnose [file] [--seconds 10] [--ask-tuning]
+                                           captures every Fanatec device into a diagnostic
+                                           file (default: fanamac-diagnostic.json).
+                                           --ask-tuning also asks a base FanaMac doesn't
+                                           know for its tuning report
+      fanamac ingest <file> [--add]        reads a diagnostic someone sent: what matches,
+                                           what doesn't, the profile to try. --add keeps it
+                                           in Tests/Fixtures, where the tests replay it
     Without --send, force and effect only print the frames.
     """
 
@@ -82,7 +92,7 @@ var signalSources: [DispatchSourceSignal] = []
 /// keep delivering the input reports. Ctrl-C ends `body` through `shouldStop`,
 /// so the stop frames are always the last thing sent.
 func withBase(_ body: @escaping (Wheelbase, Session) -> Void) -> Never {
-    let base = Wheelbase(marksBase: false)
+    let base = Wheelbase(productIDs: BaseCatalog.load().profiles.map(\.productID))
     let session = Session()
     for number in [SIGINT, SIGTERM, SIGHUP] {
         signal(number, SIG_IGN)
@@ -104,7 +114,7 @@ func withBase(_ body: @escaping (Wheelbase, Session) -> Void) -> Never {
         }
     }
     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-        if !started { fail("CSL DD not found (0x0EB7/0x0020). Is the base on, in PC mode (red LED)?") }
+        if !started { fail("No wheelbase found. Is the base on, in PC mode (red LED)? For a base FanaMac doesn't know, run: fanamac diagnose") }
     }
     RunLoop.main.run()
     exit(0)
@@ -121,6 +131,11 @@ func withForce(_ body: @escaping (ForceOutput, Session) -> Void) -> Never {
         }
         Thread.sleep(forTimeInterval: 0.02)
         let output = ForceOutput(wheelbase: base)
+        // An untested base gets its profile's frame format and a capped force.
+        if let profile = base.productID.flatMap(BaseCatalog.load().profile(productID:)) {
+            if !profile.isTested { print("\(profile.name): untested base, force capped at \(Int(BaseProfile.untestedForceCap * 100)) % of what is asked.") }
+            output.configure(highRes: profile.highResForce, cap: profile.forceCap)
+        }
         output.onError = { session.stop(error: "Write refused, force cut: \($0.localizedDescription)") }
         body(output, session)
         output.stopNow()
@@ -216,11 +231,65 @@ func monitor(_ args: [String]) -> Never {
     }
 }
 
+/// Takes a flag out of the arguments; true if it was there.
+func flag(_ name: String, in args: inout [String]) -> Bool {
+    guard let i = args.firstIndex(of: name) else { return false }
+    args.remove(at: i)
+    return true
+}
+
+func diagnose(_ args: [String]) -> Never {
+    var args = args
+    let ask = flag("--ask-tuning", in: &args)
+    let (n, _, rest) = parse(args, defaults: ["--seconds": 10], allowSend: false)
+    guard rest.count <= 1, n["--seconds"]! >= 1, n["--seconds"]! <= 120 else { fail(usage) }
+    let url = URL(fileURLWithPath: rest.first ?? "fanamac-diagnostic.json")
+    let catalog = BaseCatalog.load()
+    print("Recording for \(Int(n["--seconds"]!)) s. Turn the wheel lock to lock, press each pedal fully, press a few buttons.")
+    DiagnosticCapture.run(seconds: n["--seconds"]!, catalog: catalog, version: FanaMacVersion.current, askUnknown: ask) { d in
+        guard !d.devices.isEmpty else { fail("No Fanatec device found. Is the base on, in PC mode (red LED)?") }
+        do { try d.write(to: url) } catch { fail("Cannot write \(url.path): \(error.localizedDescription)") }
+        print(DiagnosticReview(d, catalog: catalog).lines.joined(separator: "\n"))
+        print("\nSaved \(url.path). No serial number is in it. Attach it to an issue on FanaMac's GitHub page.")
+        exit(0)
+    }
+    RunLoop.main.run()
+    exit(0)
+}
+
+/// Diagnostics kept as test fixtures: `app/build.sh test` replays them.
+let fixtures = URL(fileURLWithPath: "Tests/Fixtures")
+
+func loadFixtures() -> [Diagnostic] {
+    let files = (try? FileManager.default.contentsOfDirectory(at: fixtures, includingPropertiesForKeys: nil)) ?? []
+    return files.filter { $0.pathExtension == "json" }.compactMap { try? Diagnostic.load($0) }
+}
+
+func ingest(_ args: [String]) -> Never {
+    var args = args
+    let add = flag("--add", in: &args)
+    guard args.count == 1 else { fail(usage) }
+    let d: Diagnostic
+    do { d = try Diagnostic.load(URL(fileURLWithPath: args[0])) } catch let error as DiagnosticError { fail("\(args[0]): \(error)") }
+    catch { fail("\(args[0]) is not a FanaMac diagnostic.") }
+    print("Captured by FanaMac \(d.fanamac) on macOS \(d.macOS), \(Int(d.seconds)) s\n")
+    print(DiagnosticReview(d, catalog: BaseCatalog.load(), references: loadFixtures()).lines.joined(separator: "\n"))
+    if add {
+        guard (try? fixtures.checkResourceIsReachable()) == true else { fail("Run it from the app folder: Tests/Fixtures isn't here.") }
+        let target = fixtures.appendingPathComponent(d.fixtureName)
+        do { try d.write(to: target) } catch { fail("Cannot write \(target.path): \(error.localizedDescription)") }
+        print("\nKept as \(target.path): ./build.sh test now replays it.")
+    }
+    exit(0)
+}
+
 let arguments = Array(CommandLine.arguments.dropFirst())
 switch arguments.first {
 case "monitor": monitor(Array(arguments.dropFirst()))
 case "force": forceTest(Array(arguments.dropFirst()))
 case "effect": effectTest(Array(arguments.dropFirst()))
+case "diagnose": diagnose(Array(arguments.dropFirst()))
+case "ingest": ingest(Array(arguments.dropFirst()))
 case "record":
     guard arguments.count == 2 else { fail(usage) }
     guard let text = try? String(contentsOfFile: arguments[1], encoding: .utf8) else { fail("Cannot read file: \(arguments[1])") }

@@ -46,13 +46,13 @@ struct ContentView: View {
             }
 
             Section("Standard") {
-                ForEach(allParams.filter(\.standard), id: \.key.rawValue) { ParamRow(param: $0) }
+                ForEach(allParams.filter { $0.standard && model.has($0.key) }, id: \.key.rawValue) { ParamRow(param: $0) }
             }
             .disabled(model.showsAutoSetup)
 
             if !model.standardMenu {
                 Section("Advanced") {
-                    ForEach(allParams.filter { !$0.standard }, id: \.key.rawValue) { ParamRow(param: $0) }
+                    ForEach(allParams.filter { !$0.standard && model.has($0.key) }, id: \.key.rawValue) { ParamRow(param: $0) }
                 }
                 .disabled(model.showsAutoSetup)
             }
@@ -72,6 +72,12 @@ struct ContentView: View {
             Text(model.standardMenu
                 ? "The wheel's Tuning Menu will show every setting. Your setups keep their values."
                 : "This can reset your setups to their default values and puts the wheel on Auto Setup.")
+        }
+        .alert("Turn on Experimental Mode?", isPresented: $model.askingExperimental) {
+            Button("Turn On", role: .destructive) { model.setExperimental(true) }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("FanaMac was never run on a \(model.profile?.name ?? "base like this"). It will write settings to it and let games send forces, capped at \(Int(BaseProfile.untestedForceCap * 100)) %. A wrong command can move the wheel hard or change what the base has stored. Keep your hands clear of the wheel the first time, and be ready to switch the base off.")
         }
         .sheet(item: $model.shownPreset) { PresetSheet(preset: $0, base: model.presetBase, slot: model.slot) }
         .sheet(isPresented: $model.calibratingShifter) { ShifterCalibrationSheet() }
@@ -159,9 +165,9 @@ private struct WheelbaseMenu: View {
         let input = live.tracker.latest
         Menu {
             Button("Calibrate Center") { Task { await model.calibrateCenter() } }
-                .disabled(input?.rimID == nil)
+                .disabled(input?.rimID == nil || !model.fullAccess)
             Button("Calibrate Shifter") { model.calibratingShifter = true }
-                .disabled(input?.shifterInHMode != true)
+                .disabled(input?.shifterInHMode != true || !model.fullAccess)
             Divider()
             Toggle("Mouse Emulation", isOn: Binding(get: { mouse.isOn }, set: { model.setMouseEmulation($0) }))
             Picker("Mouse Speed", selection: $mouse.speed) {
@@ -170,7 +176,13 @@ private struct WheelbaseMenu: View {
                 Text("Fast").tag(1600.0)
             }
             Divider()
+            if let p = model.profile, !p.isTested {
+                Toggle("Experimental Mode", isOn: Binding(get: { model.experimental }, set: { on in
+                    if on { model.askingExperimental = true } else { model.setExperimental(false) }
+                }))
+            }
             Button("Reset All Setups", role: .destructive) { Task { await model.resetAllSetups() } }
+                .disabled(!model.fullAccess)
         } label: { Label("Wheelbase", systemImage: "steeringwheel") }
         .menuStyle(.borderlessButton)
         .disabled(model.base == nil || model.sending)
@@ -283,9 +295,15 @@ struct StatusHeader: View {
                     .background(.quaternary, in: RoundedRectangle(cornerRadius: 12))
             }
             VStack(alignment: .leading, spacing: 2) {
-                Text("Fanatec CSL DD").font(.headline)
+                Text(model.profile.map { "Fanatec \($0.name)" } ?? "Fanatec wheelbase").font(.headline)
                 if model.base == nil {
-                    Text("Turn the base on in PC mode (red LED).").font(.caption).foregroundStyle(.secondary)
+                    Text("Turn the base on in PC mode (red LED). Not detected? Help > Save Diagnostic.")
+                        .font(.caption).foregroundStyle(.secondary)
+                } else if let p = model.profile, !p.isTested {
+                    Text(model.experimental
+                         ? "Untested base, experimental mode: force capped at \(Int(BaseProfile.untestedForceCap * 100)) %"
+                         : "Untested base: read-only")
+                        .font(.caption).foregroundStyle(.orange)
                 }
             }
             Spacer()
@@ -584,7 +602,7 @@ struct ParamRow: View {
                 .pickerStyle(.segmented).labelsHidden().fixedSize()
         case .SEN:
             if value.wrappedValue != 0 {
-                Slider(value: doubleBinding(value), in: 90...2520)
+                Slider(value: doubleBinding(value), in: 90...Double(model.maxAngle))
             } else {
                 Spacer()
             }

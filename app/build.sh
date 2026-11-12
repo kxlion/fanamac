@@ -12,6 +12,11 @@ SDK="${FANAMAC_SDK:-$(ls -d /Library/Developer/CommandLineTools/SDKs/MacOSX26*.s
 SWIFTC=(swiftc -sdk "$SDK" -target arm64-apple-macos14)
 mkdir -p .build
 
+# The version is the one line of ../VERSION, for the app, the plug-in and the CLI.
+VERSION="$(<../VERSION)"
+[[ "$VERSION" =~ '^[0-9]+(\.[0-9]+){1,2}$' ]] || { echo "VERSION must look like 1.2 or 1.2.3, not '$VERSION'." >&2; exit 1; }
+print -r -- "enum FanaMacVersion { static let current = \"$VERSION\" }" > .build/Version.swift
+
 if [[ "${1:-}" == "test" ]]; then
   "${SWIFTC[@]}" Sources/FanaMacCore/*.swift Sources/FanaMacCLI/Record.swift Tests/FanaMacCoreTests/main.swift -o .build/tests
   exec .build/tests
@@ -20,7 +25,7 @@ fi
 if [[ "${1:-}" == "cli" ]]; then
   mkdir -p build
   "${SWIFTC[@]}" -O -module-name fanamac Sources/FanaMacCore/*.swift Sources/FanaMacCLI/*.swift \
-    Sources/FanaMac/{Wheelbase,NativeForce,ForceOutput,Recorder}.swift -o build/fanamac
+    Sources/FanaMac/{Wheelbase,NativeForce,ForceOutput,Recorder,DiagnosticCapture}.swift .build/Version.swift -o build/fanamac
   echo "Built build/fanamac"
   exit 0
 fi
@@ -37,7 +42,7 @@ rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 
 "${SWIFTC[@]}" -O -parse-as-library -module-name FanaMac \
-  Sources/FanaMacCore/*.swift Sources/FanaMac/*.swift -o "$APP/Contents/MacOS/FanaMac"
+  Sources/FanaMacCore/*.swift Sources/FanaMac/*.swift .build/Version.swift -o "$APP/Contents/MacOS/FanaMac"
 
 if [[ ! -f .build/AppIcon.icns || Icon/make_icon.swift -nt .build/AppIcon.icns ]]; then
   rm -rf .build/AppIcon.iconset
@@ -58,7 +63,7 @@ cp -R ../ffplugin/build/FanaMacFF.plugin "$APP/Contents/PlugIns/"
 # Fanatec's recommended settings per game (see docs/PRESETS.md).
 cp Presets/*.json "$APP/Contents/Resources/"
 
-cat > "$APP/Contents/Info.plist" <<'PLIST'
+cat > "$APP/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -69,8 +74,8 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
   <key>CFBundleExecutable</key><string>FanaMac</string>
   <key>CFBundleIconFile</key><string>AppIcon</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleShortVersionString</key><string>0.1</string>
-  <key>CFBundleVersion</key><string>1</string>
+  <key>CFBundleShortVersionString</key><string>$VERSION</string>
+  <key>CFBundleVersion</key><string>$VERSION</string>
   <key>LSMinimumSystemVersion</key><string>14.0</string>
   <key>NSHighResolutionCapable</key><true/>
 </dict>

@@ -326,5 +326,104 @@ check(MouseStick.velocity(rx: 0, ry: -128, speed: 800).y == -800, "joystick up m
 check(MouseStick.velocity(rx: 127, ry: 0, speed: 800).x == -800, "joystick left moves the cursor left")
 check(abs(MouseStick.velocity(rx: 30, ry: 0, speed: 800).x) < 40, "small moves stay slow")
 
+
+// Base profiles
+let catalog = BaseCatalog()
+check(catalog.profile(productID: 0x0020)?.isTested == true, "CSL DD is the tested base")
+check(catalog.profiles.filter(\.isTested).count == 1, "nothing else claims to be tested")
+check(Set(catalog.profiles.map(\.productID)).count == catalog.profiles.count, "one profile per product ID")
+check(catalog.classify(productID: 0x0006) == .base(catalog.profile(productID: 0x0006)!), "DD1 has a profile")
+check(catalog.classify(productID: 0x1A92) == .accessory("ClubSport Shifter USB adapter"), "shifter adapter is an accessory")
+check(catalog.classify(productID: 0x4242) == .unknown, "unknown product")
+check(catalog.classify(productID: 0x0E07) == .consoleMode("GT DD Pro"), "PlayStation mode is recognised, not treated as a base")
+check(catalog.profile(productID: 0x038E)?.highResForce == false, "ClubSport V1 gets the cautious force frame")
+check(Set(BaseCatalog.accessories.keys).isDisjoint(with: BaseCatalog.consoleModes.keys)
+      && catalog.profiles.allSatisfy { BaseCatalog.accessories[$0.productID] == nil && BaseCatalog.consoleModes[$0.productID] == nil },
+      "a product ID is a base, an accessory or a console mode, never two")
+check(!DiagnosticReview(Diagnostic(fanamac: "test", macOS: "0", seconds: 1, devices: [device(0x0E07, reports: [raw])])).problems.isEmpty, "PlayStation mode flagged in a diagnostic")
+check(catalog.profile(productID: 0x0006)?.forceCap == BaseProfile.untestedForceCap && catalog.profile(productID: 0x0020)?.forceCap == 1, "only untested bases are capped")
+let newBase = try JSONDecoder().decode(BaseProfile.self, from: Data(#"{"productID": "01E9", "name": "New base", "status": "tested", "highResForce": true, "tuningMenu": true, "maxAngle": 2520, "params": ["FF", "SEN"]}"#.utf8))
+check(newBase.productID == 0x01E9 && newBase.has(.FF) && !newBase.has(.NDP), "profile file read")
+var psMode = newBase; psMode.productID = 0x0E07
+check(BaseCatalog(extra: [psMode]).classify(productID: 0x0E07) == .consoleMode("GT DD Pro"), "a profile file can't turn a PlayStation mode into a base")
+check(try JSONDecoder().decode(BaseProfile.self, from: JSONEncoder().encode(newBase)) == newBase, "profile round-trip")
+check(throwsError { _ = try JSONDecoder().decode(BaseProfile.self, from: Data(#"{"productID": "0020", "name": "x", "highResForce": true, "tuningMenu": true, "maxAngle": 9000}"#.utf8)) }, "absurd angle refused")
+var fakeCSL = newBase; fakeCSL.productID = 0x0020; fakeCSL.name = "Fake"
+var fakePedals = newBase; fakePedals.productID = 0x183B
+let extended = BaseCatalog(extra: [newBase, fakeCSL, fakePedals])
+check(extended.profile(productID: 0x01E9)?.isTested == false, "a profile file can't declare itself tested")
+check(extended.profile(productID: 0x0020)?.name == "CSL DD", "a profile file can't replace a tested base")
+check(extended.classify(productID: 0x183B) == .accessory("ClubSport Pedals V3"), "a profile file can't turn pedals into a base")
+
+// 8-bit constant force (bases without the 16-bit format)
+check(try ForceProtocol.constant(1, highRes: false) == [0x01, 0x01, 0x08, 0x01, 0, 0, 0, 0], "8-bit full clockwise")
+check(try ForceProtocol.constant(-1, highRes: false) == [0x01, 0x01, 0x08, 0xFF, 0, 0, 0, 0], "8-bit full anti-clockwise")
+check(try ForceProtocol.constant(0, highRes: false) == ForceProtocol.constantOff, "8-bit zero is off")
+check(try ForceProtocol.constant(0.001, highRes: false) == ForceProtocol.constantOff, "8-bit: below one step is off")
+check(try ForceProtocol.constant(0.5) == ForceProtocol.constant(0.5, highRes: true), "16-bit stays the default")
+
+// Force cap of an untested base
+var capped = ForceEngine()
+capped.cap = 0.25
+let t0 = Date(timeIntervalSince1970: 1000)
+check(try capped.set(ForceCommand(level: 1, spring: ConditionSlot(posCoeff: 1, negCoeff: 1, saturation: 1)), at: t0)
+      == [try ForceProtocol.constant(0.25), try ForceProtocol.spring(ConditionSlot(posCoeff: 1, negCoeff: 1, saturation: 0.25))!], "cap limits level and top force")
+capped.cap = 0
+check(try capped.set(1, at: t0).allSatisfy { [ForceProtocol.constantOff, ForceProtocol.springOff].contains($0) } && !capped.isActive, "cap 0 sends no force")
+var coarse = ForceEngine(); coarse.highRes = false
+check(try coarse.set(1, at: t0) == [[0x01, 0x01, 0x08, 0x01, 0, 0, 0, 0]], "engine uses the profile's frame format")
+
+// Writes follow the profile
+var twoSettings = snap.setup; twoSettings[.FF] = 50; twoSettings[.NDP] = 10
+let narrow = try snap.writeFrame(for: twoSettings, profile: newBase)
+check(reg(narrow, "FF") == 50 && reg(narrow, "NDP") == Int(hwRead[0x0D]), "a setting the base doesn't have is not written")
+var wide = snap.setup; wide[.SEN] = 1440
+let elite = catalog.profile(productID: 0x0E03)!
+check(throwsError { _ = try snap.writeFrame(for: wide, profile: elite) }, "angle above the base's maximum refused")
+check(reg(try snap.writeFrame(for: wide, profile: catalog.profile(productID: 0x0020)), "SEN") == Int(try TuningProtocol.encodeSEN(1440)), "same angle accepted by the CSL DD")
+
+// Diagnostics
+check(hexBytes(hexString([0x00, 0x7F, 0xFF])) == [0x00, 0x7F, 0xFF] && hexBytes("abc") == nil && hexBytes("zz") == nil, "hex round-trip")
+check(DiagnosticReview.ranges([1, 2, 3, 7, 9, 10]) == "1-3, 7, 9-10" && DiagnosticReview.ranges([]) == "none", "byte ranges")
+func device(_ productID: Int, descriptor: [UInt8] = [0x05, 0x01], asked: Bool = true, reports: [[UInt8]]) -> Diagnostic.Device {
+    var list: [Diagnostic.Report] = []
+    for r in reports {
+        if let i = list.firstIndex(where: { $0.id == Int(r[0]) && $0.length == r.count }) { list[i].add(r) } else { list.append(Diagnostic.Report(bytes: r)) }
+    }
+    return Diagnostic.Device(productID: productID, product: "FANATEC Wheel", usagePage: 1, usage: 4, maxInputReportSize: 64,
+                             maxOutputReportSize: 64, maxFeatureReportSize: 0, version: 1, descriptor: descriptor, asked: asked, reports: list)
+}
+var turned = raw; turned[17] = 0x10; turned[18] = 0x90
+let cslCapture = Diagnostic(fanamac: "test", macOS: "0", seconds: 1, devices: [device(0x0020, reports: [raw, turned, hwRead])])
+check(cslCapture.devices[0].reports[0].movedBytes == [17, 18] && cslCapture.devices[0].reports[0].count == 2, "moved bytes tracked")
+let cslReview = DiagnosticReview(cslCapture, references: [cslCapture])
+check(cslReview.problems.isEmpty, "a CSL DD capture raises nothing: \(cslReview.problems)")
+check(cslReview.items[0].profile == nil, "known base: no profile proposed")
+check(try JSONDecoder().decode(Diagnostic.self, from: JSONEncoder().encode(cslCapture)) == cslCapture, "diagnostic round-trip")
+check(cslCapture.fixtureName == "0020-fanatec-wheel.json", "fixture name")
+
+let strangerReview = DiagnosticReview(Diagnostic(fanamac: "test", macOS: "0", seconds: 1,
+    devices: [device(0x4242, descriptor: [0x05, 0x02], asked: false, reports: [Array(raw.prefix(20))])]), references: [cslCapture])
+let proposed = strangerReview.items[0].profile
+check(proposed?.productID == 0x4242 && proposed?.highResForce == false && proposed?.tuningMenu == false && proposed?.isTested == false, "unknown base: cautious profile proposed")
+check(strangerReview.problems.count == 2, "other descriptor and short report flagged: \(strangerReview.problems)")
+var oddTuning = hwRead; oddTuning[0x04] = 200
+check(DiagnosticReview(Diagnostic(fanamac: "test", macOS: "0", seconds: 1, devices: [device(0x0020, reports: [raw, oddTuning])])).problems.count == 2,
+      "out-of-range register flagged, and the rewrite it would cause")
+check(!DiagnosticReview(Diagnostic(fanamac: "test", macOS: "0", seconds: 1, devices: [device(0x0020, reports: [raw])])).problems.isEmpty, "missing tuning report flagged")
+
+// Diagnostics sent by owners (Tests/Fixtures): each one must still read the
+// same way, and a tested base must raise nothing.
+let fixtureFiles = ((try? FileManager.default.contentsOfDirectory(at: URL(fileURLWithPath: "Tests/Fixtures"), includingPropertiesForKeys: nil)) ?? [])
+    .filter { $0.pathExtension == "json" }
+let fixtureSet = fixtureFiles.compactMap { try? Diagnostic.load($0) }
+check(fixtureSet.count == fixtureFiles.count, "every fixture is a readable diagnostic")
+for (file, d) in zip(fixtureFiles, fixtureSet) {
+    let review = DiagnosticReview(d, references: fixtureSet)
+    for (dev, item) in zip(d.devices, review.items) where dev.product16.flatMap(catalog.profile(productID:))?.isTested == true {
+        check(item.problems.isEmpty, "\(file.lastPathComponent): \(item.problems)")
+    }
+}
+
 print("\(count - failures)/\(count) checks passed")
 exit(failures == 0 ? 0 : 1)

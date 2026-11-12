@@ -30,8 +30,10 @@ Every Fanatec USB command seen so far, whether FanaMac uses it or not, and the r
 | Device | Vendor | Product | HID usage carrying the reports |
 |---|---|---|---|
 | CSL DD, PC mode (red LED) | `0EB7` | `0020` | `04` / `05` |
-| CSL DD, compatibility mode (yellow LED) | `0EB7` | `0004` | Not supported by FanaMac |
+| CSL DD, compatibility mode (yellow LED) | `0EB7` | `0004` | Seen as a ClubSport V2.5: untested, see [BASES.md](BASES.md) |
 | ClubSport Shifter SQ V1.5 on its USB adapter | `0EB7` | `1A92` | |
+
+The product IDs of the other Fanatec devices are in [DEVICES.md](DEVICES.md).
 
 ## All commands
 
@@ -49,6 +51,7 @@ Every Fanatec USB command seen so far, whether FanaMac uses it or not, and the r
 | Tuning | Reset all setups | `FF 03 04` | SDK | Tested | Erases every setup, leaves the base in the Standard menu |
 | Tuning | Save tuning data | `FF 03 03` | SDK | Not sent | |
 | Force | Constant force | `01 01 08 <lo> <hi> 00 00 01` | Public | Tested | Slot 0 |
+| Force | Constant force, 8-bit | `01 01 08 <x>` | Public | Not sent | For bases without the 16-bit format. Centred on `80` |
 | Force | Constant force off | `01 03 08` | Public | Tested | |
 | Force | Spring | `01 11 0B <left> <right> <k> 00 <sat>` | Public | Tested | Slot 1 |
 | Force | Spring off | `01 13 0B` | Public | Tested | |

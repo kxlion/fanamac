@@ -71,10 +71,11 @@ public struct Setup: Equatable, Codable, Sendable {
         set { values[key] = newValue }
     }
 
-    public func validate() throws {
+    /// `maxAngle` is the largest steering angle of the base the setup is for.
+    public func validate(maxAngle: Int = 2520) throws {
         for p in allParams {
             let v = self[p.key]
-            if !p.range.contains(v) || (p.key == .SEN && v > 0 && v < 90) { throw TuningError.outOfRange(p.key, v) }
+            if !p.range.contains(v) || (p.key == .SEN && v > 0 && (v < 90 || v > maxAngle)) { throw TuningError.outOfRange(p.key, v) }
         }
     }
 
@@ -219,11 +220,16 @@ public struct TuningSnapshot: Equatable, Sendable {
     }
 
     /// Write frame: the base's snapshot with only the changed settings replaced.
-    public func writeFrame(for setup: Setup) throws -> [UInt8] {
+    /// With a base's profile, a setting its Tuning Menu doesn't have is never
+    /// written, and the steering angle stays within what the base accepts.
+    public func writeFrame(for setup: Setup, profile: BaseProfile? = nil) throws -> [UInt8] {
         try setup.validate()
+        if let profile, profile.has(.SEN), setup[.SEN] != value(.SEN), setup[.SEN] > profile.maxAngle {
+            throw TuningError.outOfRange(.SEN, setup[.SEN])
+        }
         var buf = [0xFF, 0x03, 0x00] + raw[2..<(TuningProtocol.reportSize - 1)]
         buf[3] &= 0x7F  // the Standard menu flag only exists in reports
-        for key in ParamKey.allCases where setup[key] != value(key) {
+        for key in ParamKey.allCases where setup[key] != value(key) && profile?.has(key) != false {
             let byte = try TuningProtocol.encode(key, setup[key])
             buf[TuningProtocol.registers[key.rawValue]! + 1] = byte
             if key == .BRF { buf[TuningProtocol.brakeForceAlt + 1] = byte }

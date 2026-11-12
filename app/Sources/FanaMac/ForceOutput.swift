@@ -37,6 +37,15 @@ final class ForceOutput: @unchecked Sendable {
         timer = t
     }
 
+    /// The connected base's force format and limit, from its profile.
+    func configure(highRes: Bool, cap: Double) {
+        queue.async {
+            self.cut()
+            self.engine.highRes = highRes
+            self.engine.cap = cap
+        }
+    }
+
     /// Keep calling it: without a new command for 0.25 s everything drops to zero.
     func set(_ command: ForceCommand) {
         lock.lock()

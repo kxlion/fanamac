@@ -2,6 +2,20 @@ import AppKit
 import Foundation
 import SwiftUI
 
+/// The base profiles in use, and which untested bases the driver opened up.
+enum Bases {
+    static let catalog = BaseCatalog.load()
+
+    private static func key(_ productID: Int) -> String { String(format: "experimental.%04X", productID) }
+    static func isExperimental(_ productID: Int) -> Bool { UserDefaults.standard.bool(forKey: key(productID)) }
+    static func setExperimental(_ on: Bool, _ productID: Int) { UserDefaults.standard.set(on, forKey: key(productID)) }
+
+    /// Writes and force feedback: a tested base, or an untested one in experimental mode.
+    static func fullAccess(_ productID: Int) -> Bool {
+        catalog.profile(productID: productID).map { $0.isTested || isExperimental(productID) } ?? false
+    }
+}
+
 @MainActor
 final class TuningModel: ObservableObject {
 
@@ -59,7 +73,71 @@ final class TuningModel: ObservableObject {
     @Published private(set) var wheelSlot: Int?
 
     private let store = Store()
-    private let wheelbase = Wheelbase()
+    private let wheelbase = Wheelbase(productIDs: Bases.catalog.profiles.map(\.productID), marks: { Bases.fullAccess($0) })
+
+    /// What FanaMac knows about the connected base.
+    var profile: BaseProfile? { base.flatMap { Bases.catalog.profile(productID: $0.productID) } }
+    /// The driver turned the experimental mode on for this untested base.
+    @Published private(set) var experimental = false
+    @Published var askingExperimental = false
+    /// Settings can be written and games get force feedback.
+    var fullAccess: Bool { profile.map { $0.isTested || experimental } ?? false }
+    var hasTuningMenu: Bool { profile?.tuningMenu ?? false }
+    func has(_ key: ParamKey) -> Bool { profile?.has(key) ?? true }
+    var maxAngle: Int { profile?.maxAngle ?? 2520 }
+
+    /// An untested base stays read-only until this is turned on: then it takes
+    /// writes, and forces capped at `BaseProfile.untestedForceCap`.
+    func setExperimental(_ on: Bool) {
+        guard let p = profile, !p.isTested else { return }
+        Bases.setExperimental(on, p.productID)
+        experimental = on
+        configureForce()
+        wheelbase.refreshMarks()
+        if on { checkWine(); Task { await readBase() } }
+        message = on ? nil : Self.readOnlyText(p)
+    }
+
+    private static func readOnlyText(_ p: BaseProfile) -> String {
+        "The \(p.name) is untested: read-only. Wheelbase menu > Experimental Mode to write to it."
+    }
+
+    /// No force at all goes to a base without full access.
+    private func configureForce() {
+        guard let p = profile else { return }
+        force.configure(highRes: p.highResForce, cap: fullAccess ? p.forceCap : 0)
+    }
+
+    private func writable() -> Bool {
+        if fullAccess { return true }
+        message = profile.map(Self.readOnlyText) ?? "No wheelbase."
+        return false
+    }
+
+    /// A diagnostic is being recorded.
+    @Published private(set) var capturing = false
+    static let captureSeconds = 10.0
+
+    /// Records every Fanatec device for a few seconds into a file to send.
+    func saveDiagnostic(to url: URL) {
+        guard !capturing else { return }
+        capturing = true
+        message = "Recording for \(Int(Self.captureSeconds)) s: turn the wheel lock to lock, press each pedal fully, press a few buttons."
+        DiagnosticCapture.run(seconds: Self.captureSeconds, catalog: Bases.catalog, version: FanaMacVersion.current) { [weak self] d in
+            MainActor.assumeIsolated {
+                guard let self else { return }
+                self.capturing = false
+                if d.devices.isEmpty {
+                    self.message = "No Fanatec device found. Is the base on, in PC mode (red LED)?"
+                    return
+                }
+                do {
+                    try d.write(to: url)
+                    self.note("Diagnostic saved. Attach it to an issue on FanaMac's GitHub page.")
+                } catch { self.message = "Could not save the diagnostic." }
+            }
+        }
+    }
     private let usbShifter = USBShifter()
     private lazy var force = ForceOutput(wheelbase: wheelbase)
     /// The base is producing a force right now.
@@ -89,8 +167,13 @@ final class TuningModel: ObservableObject {
                 self.wineTooEarly = false
             }
             else if !wasConnected {
-                self.checkWine()
-                Task { await self.readBase() }
+                self.experimental = info.map { Bases.isExperimental($0.productID) } ?? false
+                self.configureForce()
+                if self.fullAccess { self.checkWine() }
+                Task {
+                    await self.readBase()
+                    if !self.fullAccess, self.message == nil, let p = self.profile { self.message = Self.readOnlyText(p) }
+                }
             }
         }
         let live = live
@@ -154,7 +237,7 @@ final class TuningModel: ObservableObject {
 
     var setup: Setup { showsAutoSetup ? snapshot?.setup ?? state.setup(slot) : state.setup(slot) }
     var isSynced: Bool { state.isSynced(slot) }
-    var canSend: Bool { base != nil && !sending && !showsAutoSetup }
+    var canSend: Bool { base != nil && !sending && !showsAutoSetup && fullAccess && hasTuningMenu }
 
     func binding(_ key: ParamKey) -> Binding<Int> {
         Binding(get: { self.setup[key] }, set: { self.update(key, $0) })
@@ -191,8 +274,8 @@ final class TuningModel: ObservableObject {
     /// Fanatec's recommended settings, bundled with the app.
     static let presets: PresetLibrary? = Bundle.main.url(forResource: "fanatec_recommended", withExtension: "json")
         .flatMap { try? PresetLibrary.load($0) }
-    /// The connected base in the Fanatec App's names: FanaMac talks to the CSL DD.
-    let presetBase = "CSLDD"
+    /// The connected base in the Fanatec App's names ("CSLDD").
+    var presetBase: String { profile?.presetBase ?? "" }
     var gamePresets: [GamePreset] { Self.presets?.games(for: presetBase) ?? [] }
     /// Game whose in-game settings are on screen.
     @Published var shownPreset: GamePreset?
@@ -236,6 +319,7 @@ final class TuningModel: ObservableObject {
     /// Sends the base's reset, then reads every setup back. Unsent edits go too:
     /// the setups are forgotten first, so the base's values replace them.
     func resetAllSetups() async {
+        guard writable() else { return }
         do {
             try await wheelbase.write([TuningProtocol.resetAllSetups])
             baseSetups = [:]
@@ -248,6 +332,7 @@ final class TuningModel: ObservableObject {
 
     /// Takes the wheel's current position as its centre.
     func calibrateCenter() async {
+        guard writable() else { return }
         do {
             try await wheelbase.write([WheelCommand.centerCalibrate])
             note("Steering center set.")
@@ -267,6 +352,7 @@ final class TuningModel: ObservableObject {
 
     /// One calibration frame. On a failure the calibration window closes.
     func sendShifterCalibration(_ frame: [UInt8]) async -> Bool {
+        guard writable() else { calibratingShifter = false; return false }
         do {
             try await wheelbase.write([frame])
             return true
@@ -311,7 +397,10 @@ final class TuningModel: ObservableObject {
     /// On connect: reads every setup. The base only reports its active setup, so
     /// each one is selected in turn, then the wheel goes back to the one it was on.
     /// Nothing is written to the settings.
+    /// An untested base is only asked for its active setup: selecting the
+    /// others would already be a write.
     func readBase() async {
+        guard hasTuningMenu else { return }
         sending = true
         defer { sending = false }
         do {
@@ -320,6 +409,7 @@ final class TuningModel: ObservableObject {
                 message = "The wheelbase didn't send its settings."
                 return
             }
+            guard fullAccess else { message = nil; return }
             let active = first.slot  // nil: Auto Setup
             var missed: [Int] = []
             for s in 1...5 where s != active {
@@ -341,6 +431,7 @@ final class TuningModel: ObservableObject {
     /// Read button: the base doesn't report a setup change made on the wheel,
     /// so this asks for the active setup and shows it. Only reads.
     func read() async {
+        guard hasTuningMenu else { return }
         sending = true
         defer { sending = false }
         do {
@@ -384,6 +475,7 @@ final class TuningModel: ObservableObject {
 
     /// Switches the wheel to this setup, like its setup button. Writes no setting.
     func activate() async {
+        guard writable() else { return }
         let slot = slot
         sending = true
         defer { sending = false }
@@ -399,6 +491,7 @@ final class TuningModel: ObservableObject {
     /// Switches the wheel to Auto Setup. Writes no setting.
     func activateAutoSetup() async {
         guard !wheelOnAuto else { viewingCustomSetup = false; return }
+        guard writable() else { return }
         sending = true
         defer { sending = false }
         do {
@@ -415,6 +508,7 @@ final class TuningModel: ObservableObject {
         let preset = presetAfterMenuSwitch
         presetAfterMenuSwitch = nil
         let before = snapshot?.advancedMode
+        guard writable() else { return }
         do {
             try await wheelbase.write([TuningProtocol.toggleMenuMode])
             await readBase()
@@ -432,6 +526,7 @@ final class TuningModel: ObservableObject {
     /// Selects the setup, reads it back, writes it with only the changed settings
     /// replaced, then reads it again to check.
     func send() async {
+        guard writable(), hasTuningMenu else { return }
         let slot = slot, setup = setup
         sending = true
         defer { sending = false }
@@ -442,7 +537,7 @@ final class TuningModel: ObservableObject {
                 return
             }
             let count = snapshotCount
-            try await wheelbase.write([try current.writeFrame(for: setup)])
+            try await wheelbase.write([try current.writeFrame(for: setup, profile: profile)])
             guard let echo = try await requestSnapshot(slot: slot, after: count) else {
                 persist(setup, synced: false, for: slot)
                 message = "Sent to setup \(slot), but the wheelbase didn't send it back."

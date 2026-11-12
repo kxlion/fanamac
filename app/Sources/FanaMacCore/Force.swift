@@ -20,11 +20,20 @@ public enum ForceProtocol {
 
     /// Constant force. `level` runs from −1 (full anti-clockwise) to +1 (full
     /// clockwise); 0 turns the slot off. Values outside are refused, not clipped.
-    public static func constant(_ level: Double) throws -> [UInt8] {
+    /// `highRes: false` is the 8-bit frame of the bases without the 16-bit
+    /// format (`01 08 xx`, centred on 0x80): from hid-fanatecff, never sent by FanaMac
+    /// to a real base.
+    public static func constant(_ level: Double, highRes: Bool = true) throws -> [UInt8] {
         guard level.isFinite, (-1...1).contains(level) else { throw ForceError.outOfRange(level) }
         let raw = zero - Int((level * Double(full)).rounded())
+        if !highRes {
+            // Rounded to the nearest of the 255 steps, so both directions are as strong.
+            let coarse = 0x80 - Int((level * 0x7F).rounded())
+            if coarse == 0x80 { return constantOff }
+            return frame([(constantSlot << 4) | slotOn, constantCmd, UInt8(coarse)])
+        }
         if raw == zero { return constantOff }
-        return frame([(constantSlot << 4) | slotOn, constantCmd, UInt8(raw & 0xFF), UInt8(raw >> 8), 0, 0, highRes])
+        return frame([(constantSlot << 4) | slotOn, constantCmd, UInt8(raw & 0xFF), UInt8(raw >> 8), 0, 0, Self.highRes])
     }
 
     public static let constantOff = frame([(constantSlot << 4) | slotOn | slotOff, constantCmd])
@@ -133,9 +142,13 @@ public struct ForceCommand: Equatable, Sendable {
 /// damper are sent only when they change, since the base plays them itself.
 /// Safety stop: everything drops to zero when no command arrived for `timeout`,
 /// and `stop()` cuts everything at once.
-/// The strength itself is never limited.
+/// The strength is only limited by `cap`, which is 1 (no limit) for a tested base.
 public struct ForceEngine: Sendable {
     public var timeout: TimeInterval
+    /// From the base's profile: 16-bit constant force, and the share of the
+    /// full force it may be asked for (constant level and the effects' top force).
+    public var highRes = true
+    public var cap = 1.0
     public private(set) var command = ForceCommand.none
     private var lastCommand: Date?
     // What the base plays now (nil = slot off).
@@ -182,9 +195,11 @@ public struct ForceEngine: Sendable {
     public var isActive: Bool { sentConstant != nil || sentSpring != nil || sentDamper != nil }
 
     private mutating func output(at now: Date, keepAlive: Bool) -> [[UInt8]] {
-        let c = effective(at: now)
+        var c = effective(at: now)
+        let limit = max(0, min(1, cap))
+        c.level *= limit; c.spring.saturation *= limit; c.damper.saturation *= limit
         var out: [[UInt8]] = []
-        let constant = (try? ForceProtocol.constant(c.level)).flatMap { $0 == ForceProtocol.constantOff ? nil : $0 }
+        let constant = (try? ForceProtocol.constant(c.level, highRes: highRes)).flatMap { $0 == ForceProtocol.constantOff ? nil : $0 }
         if let constant {
             if constant != sentConstant || keepAlive { out.append(constant) }
         } else if sentConstant != nil {
