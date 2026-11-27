@@ -90,13 +90,14 @@ You need:
 
 - an Apple silicon Mac on macOS 14 or later
 - a CSL DD connected by USB, or [another Fanatec base](#other-fanatec-bases) if you accept that it is untested
-- [CrossOver](https://www.codeweavers.com/crossover), the app that runs Windows games on a Mac, with your game installed in it
+- the base in PC mode (red LED): see the base's manual to switch modes
+- [CrossOver](https://www.codeweavers.com/crossover), the app that runs Windows games on a Mac (paid, with a free trial), with your game installed in it
 
 Then:
 
-1. Download `FanaMac-x.y.dmg` from the [latest release](https://github.com/kxlion/fanamac/releases/latest).
+1. On the [latest release](https://github.com/kxlion/fanamac/releases/latest), under **Assets**, download `FanaMac-<version>.dmg` (not "Source code").
 2. Open it and drag FanaMac onto the Applications folder.
-3. Open FanaMac from Applications. macOS refuses the first time, because FanaMac isn't signed with a paid Apple developer certificate: click **Done**.
+3. Open FanaMac from Applications. macOS refuses the first time, because FanaMac isn't signed with a paid Apple developer certificate: close the message.
 4. Go to System Settings > Privacy & Security, scroll down to the message about FanaMac and click **Open Anyway**. This is only needed once per version.
 
 ## Play with force feedback
@@ -131,9 +132,17 @@ Something else? [Open an issue](https://github.com/kxlion/fanamac/issues) with y
 
 ## Update
 
+FanaMac doesn't check for updates. Your version is in FanaMac > About FanaMac. To be told about new versions, choose Watch > Custom > Releases at the top of this GitHub page.
+
 Quit FanaMac, your game, Steam and CrossOver. Download the new `.dmg` from the [latest release](https://github.com/kxlion/fanamac/releases/latest), drag FanaMac onto Applications and choose **Replace**. Then open it as in steps 3 and 4 of [Install](#install).
 
-Your setups are kept. Mouse Emulation has to be allowed again after each update: see below.
+Your setups are stored in the base, so they are kept.
+
+If you use Mouse Emulation, macOS no longer recognises FanaMac after an update. Run this in Terminal, then allow FanaMac again in System Settings > Privacy & Security > Accessibility:
+
+```bash
+tccutil reset Accessibility app.fanamac.FanaMac
+```
 
 ## Mouse emulation
 
@@ -141,11 +150,7 @@ macOS asks for the Accessibility permission the first time. Allow FanaMac in Sys
 
 It stays active during games so you can use their menus. Turn it off before driving.
 
-After each update, macOS no longer recognises FanaMac. Run this in Terminal, then allow FanaMac again as above:
-
-```bash
-tccutil reset Accessibility app.fanamac.FanaMac
-```
+After each update, it has to be allowed again: see [Update](#update).
 
 ## Compared with the Fanatec App
 
